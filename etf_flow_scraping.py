@@ -29,7 +29,7 @@ if response.status_code == 200:
         csvwriter.writerow(headers)
 
         # Write the data to the CSV file
-        for row in rows[1:]:  # Skip the header row
+        for row in rows[2:]:  # Skip the header row
             data = [cell.text for cell in row.find_all('td')]
             csvwriter.writerow(data)
 
